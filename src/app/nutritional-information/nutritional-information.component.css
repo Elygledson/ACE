@@ -1,0 +1,43 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5%;
+}
+
+.table-content {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.filter-input {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .table-content {
+    width: 95%;
+  }
+}
+
+.fixed-bottom-right {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 9999;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5%;
+}
+
+.dialog-content > div {
+  height: auto;
+}

@@ -1,0 +1,193 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span [ngClass]="{ 'hide-mobile': isMobile() }"
+        >Informações Nutricionais</span
+      >
+      <mat-icon>set_meal</mat-icon>
+    </ng-template>
+    <div class="table-container">
+      <div class="table-content">
+        <mat-form-field class="filter-input">
+          <mat-label>Filtro</mat-label>
+          <mat-icon matSuffix>search</mat-icon>
+          <input
+            matInput
+            (keyup)="applyFilter($event)"
+            placeholder="Ex. Mia"
+            #input
+          />
+        </mat-form-field>
+
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="nutriente">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                mat-sort-header
+                [style.flex]="20"
+              >
+                Nutrientes
+              </th>
+              <td mat-cell *matCellDef="let row" [style.flex]="20">
+                <span *ngIf="!editMode || (editMode && row !== selectedRow)"
+                  >{{ row.nutrient }}%</span
+                >
+                <mat-form-field *ngIf="editMode && row === selectedRow">
+                  <mat-label>Nutrientes</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="editedRow.nutrient"
+                    placeholder="Nutriente"
+                  />
+                </mat-form-field>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="unidade">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Unidades
+              </th>
+              <td mat-cell *matCellDef="let row">
+                <span *ngIf="!editMode || (editMode && row !== selectedRow)"
+                  >{{ row.unit }}%</span
+                >
+                <mat-form-field *ngIf="editMode && row === selectedRow">
+                  <mat-label>Unidade</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="editedRow.unit"
+                    placeholder="unidade"
+                  />
+                </mat-form-field>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="quantidade">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Quantidade
+              </th>
+              <td mat-cell *matCellDef="let row">
+                <span *ngIf="!editMode || (editMode && row !== selectedRow)"
+                  >{{ row.amount }}%</span
+                >
+                <mat-form-field *ngIf="editMode && row === selectedRow">
+                  <mat-label>Quantidade</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="editedRow.amount"
+                    placeholder="quantidade"
+                  />
+                </mat-form-field>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="quantidade mínima">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                mat-sort-header
+                [style.flex]="5"
+              >
+                Quantidade Mínima
+              </th>
+              <td mat-cell *matCellDef="let row" [style.flex]="5">
+                <span *ngIf="!editMode || (editMode && row !== selectedRow)"
+                  >{{ row.minAmount }}%</span
+                >
+                <mat-form-field *ngIf="editMode && row === selectedRow">
+                  <mat-label>Quantidade mínima</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="editedRow.minAmount"
+                    placeholder="quantidade mínima"
+                  />
+                </mat-form-field>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="quantidade máxima">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Quantidade Máxima
+              </th>
+              <td mat-cell *matCellDef="let row">
+                <span *ngIf="!editMode || (editMode && row !== selectedRow)"
+                  >{{ row.maxAmount }}%</span
+                >
+                <mat-form-field *ngIf="editMode && row === selectedRow">
+                  <mat-label>Quantidade máxima</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="editedRow.maxAmount"
+                    placeholder="quantidade máxima"
+                  />
+                </mat-form-field>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="editar">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let row">
+                <ng-container
+                  *ngIf="!editMode || (editMode && row !== selectedRow)"
+                >
+                  <button mat-icon-button (click)="toggleEditMode(row)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </ng-container>
+                <ng-container *ngIf="editMode && row === selectedRow">
+                  <button mat-icon-button (click)="saveChanges()">
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </ng-container>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="6">
+                Nenhum dado correspondente ao filtro "{{ input.value }}"
+              </td>
+            </tr>
+          </table>
+
+          <mat-paginator
+            [pageSizeOptions]="[5, 10, 25, 100]"
+            aria-label="Select page of users"
+          ></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span [ngClass]="{ 'hide-mobile': isMobile() }">
+        Composição Nutricional
+      </span>
+      <mat-icon>receipt_long</mat-icon>
+    </ng-template>
+    <div *ngIf="dialogContent" class="dialog-content">
+      <div [innerHTML]="dialogContent"></div>
+    </div>
+    <button
+      mat-fab
+      color="primary"
+      class="fixed-bottom-right"
+      matTooltip="Adicionar Texto"
+      [matMenuTriggerFor]="fabMenu"
+      [@fabAnimation]="menuOpen ? 'open' : 'closed'"
+      (menuOpened)="menuOpen = true"
+      (menuClose)="menuOpen = false"
+    >
+      <mat-icon>{{ menuOpen ? "close" : "edit" }}</mat-icon>
+    </button>
+
+    <mat-menu #fabMenu="matMenu">
+      <button mat-menu-item (click)="openDialog()">
+        {{ dialogContent ? "Editar" : "Adicionar" }}
+      </button>
+    </mat-menu>
+  </mat-tab>
+</mat-tab-group>
