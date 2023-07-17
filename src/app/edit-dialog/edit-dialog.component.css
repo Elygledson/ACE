@@ -1,0 +1,14 @@
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h2[mat-dialog-title] {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}

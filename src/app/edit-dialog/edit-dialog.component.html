@@ -1,0 +1,91 @@
+<h2 mat-dialog-title>Atualizar Informações</h2>
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field>
+      <mat-label>Nutriente</mat-label>
+      <input matInput formControlName="nutrient" placeholder="nutriente" />
+      <mat-error
+        *ngIf="
+          form.controls['nutrient'].invalid &&
+          (form.controls['nutrient'].dirty || form.controls['nutrient'].touched)
+        "
+      >
+        O campo nutriente é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Unidade</mat-label>
+      <input matInput formControlName="unit" placeholder="unidade" />
+      <mat-error
+        *ngIf="
+          form.controls['unit'].invalid &&
+          (form.controls['unit'].dirty || form.controls['unit'].touched)
+        "
+      >
+        O campo unidade é obrigatório
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Quantidade</mat-label>
+      <input matInput formControlName="amount" placeholder="quantidade" />
+      <mat-error
+        *ngIf="
+          form.controls['amount'].invalid &&
+          (form.controls['amount'].dirty || form.controls['amount'].touched)
+        "
+      >
+        O campo quantidade obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Qtde. Mínima</mat-label>
+      <input
+        matInput
+        formControlName="minAmount"
+        placeholder="quantidade mínima"
+      />
+      <mat-error
+        *ngIf="
+          form.controls['minAmount'].invalid &&
+          (form.controls['minAmount'].dirty ||
+            form.controls['minAmount'].touched)
+        "
+      >
+        O campo quantidade mínima é obrigatório
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Qtde. Máxima</mat-label>
+      <input
+        matInput
+        formControlName="maxAmount"
+        placeholder="quantidade máxima"
+      />
+      <mat-error
+        *ngIf="
+          form.controls['maxAmount'].invalid &&
+          (form.controls['maxAmount'].dirty ||
+            form.controls['maxAmount'].touched)
+        "
+      >
+        O campo quantidade máxima é obrigatório
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button type="submit" mat-raised-button cdkFocusInitial (click)="save()">
+    Salvar
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+    [mat-dialog-close]="null"
+  >
+    Cancelar
+  </button>
+</mat-dialog-actions>

@@ -1,4 +1,4 @@
 export function isMobile(): boolean {
-  const mediaQuery = window.matchMedia('(max-width: 600px)');
+  const mediaQuery = window.matchMedia('(max-width: 758px)');
   return mediaQuery.matches;
 }

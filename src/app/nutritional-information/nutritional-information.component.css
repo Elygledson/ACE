@@ -41,3 +41,17 @@
 .dialog-content > div {
   height: auto;
 }
+
+.container-large-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.container-large-box {
+  height: 300px;
+  width: 300px;
+}

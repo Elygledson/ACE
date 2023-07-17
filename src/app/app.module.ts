@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NutritionalInformationComponent } from './nutritional-information/nutritional-information.component';
 import { ContentCreationComponent } from './content-creation/content-creation.component';
 import { QuillModule } from 'ngx-quill';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { QuillModule } from 'ngx-quill';
     HomeComponent,
     NutritionalInformationComponent,
     ContentCreationComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,23 +13,24 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ContentCreationComponent } from '../content-creation/content-creation.component';
 import { isMobile } from '../shared/utils';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
-export interface UserData {
+export interface NutritionalInformation {
+  id: number;
   nutrient: string;
   unit: string;
-  amount: string;
-  minAmount: string;
-  maxAmount: string;
+  amount: number;
+  minAmount: number;
+  maxAmount: number;
 }
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
+
+const NUTRIENTS: string[] = [
+  'CALCIO',
+  'ENERGIA. DIG.PEIXES',
+  'FIBRA BRUTA',
+  'FOSFORO DISPONÍVEL',
+  'GORDURA',
+  'PROTEINA BRUTA',
 ];
 const NAMES: string[] = [
   'Maia',
@@ -82,14 +83,15 @@ const NAMES: string[] = [
 })
 export class NutritionalInformationComponent {
   displayedColumns: string[] = [
+    'id',
     'nutriente',
     'unidade',
-    'quantidade',
-    'quantidade mínima',
-    'quantidade máxima',
+    'qtde.',
+    'qtde. mínima',
+    'qtde. máxima',
     'editar',
   ];
-  dataSource: MatTableDataSource<UserData>;
+  dataSource: MatTableDataSource<NutritionalInformation>;
   editMode: boolean = false;
   selectedRow: any;
   editedRow: any;
@@ -101,10 +103,12 @@ export class NutritionalInformationComponent {
 
   constructor(public dialog: MatDialog) {
     // Create 100 users
-    const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 1));
+    const data = Array.from({ length: 6 }, (_, k) =>
+      createMockInformation(k + 1)
+    );
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    this.dataSource = new MatTableDataSource(data);
   }
 
   ngAfterViewInit() {
@@ -122,10 +126,23 @@ export class NutritionalInformationComponent {
     });
   }
 
-  toggleEditMode(row: any) {
-    this.editMode = !this.editMode;
+  toggleEditMode(row: NutritionalInformation) {
     this.selectedRow = row;
-    this.editedRow = { ...row }; // Cria uma cópia da linha selecionada para realizar as edições
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      data: { content: row },
+      height: '400px',
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe((dialogContent) => {
+      let idx: any;
+      if (dialogContent)
+        idx = this.dataSource.filteredData.findIndex(
+          (row) => row.id == dialogContent.id
+        );
+      this.dataSource.filteredData[idx] = { ...dialogContent };
+      this.dataSource.data = this.dataSource.filteredData;
+    });
   }
 
   saveChanges() {
@@ -145,18 +162,14 @@ export class NutritionalInformationComponent {
 }
 
 /** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
-
+function createMockInformation(id: number): NutritionalInformation {
+  const name = NUTRIENTS[Math.round(Math.random() * (NUTRIENTS.length - 1))];
   return {
+    id: id,
     nutrient: name,
-    unit: name,
-    amount: name,
-    minAmount: Math.round(Math.random() * 100).toString(),
-    maxAmount: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
+    unit: Math.round(Math.random() * 100).toString(),
+    amount: Math.round(Math.random() * 100),
+    minAmount: Math.round(Math.random() * 100),
+    maxAmount: Math.round(Math.random() * (NUTRIENTS.length - 1)),
   };
 }
