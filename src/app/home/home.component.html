@@ -7,19 +7,15 @@
 
 <mat-sidenav-container color="primary">
   <mat-sidenav #snav [mode]="isMobile() ? 'over' : 'side'">
-    <mat-nav-list>
+    <mat-nav-list style="text-align: center">
       <h3 mat-subheader>Rações para Peixe</h3>
-      <a mat-list-item class="custom-button" routerLink="/tilapia">Tilapia</a>
-      <a mat-list-item class="custom-button" routerLink="/racoes-peixe/tipo2"
-        >Tipo 2</a
       >
-      <a mat-list-item class="custom-button" routerLink="/racoes-peixe/tipo3"
-        >Tipo 3</a
+      <button mat-icon-button matListItemMeta>
+        <mat-icon>info</mat-icon>
+      </button>
+      <a matListItemTitle class="custom-button" routerLink="/tilapia"
+        >Tilapia</a
       >
-      <a mat-list-item class="custom-button" routerLink="/racoes-peixe/tipo4"
-        >Tipo 4</a
-      >
-      <!-- Adicione mais itens conforme necessário -->
     </mat-nav-list></mat-sidenav
   >
   <mat-sidenav-content>

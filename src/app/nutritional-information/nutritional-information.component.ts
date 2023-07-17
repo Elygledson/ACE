@@ -97,6 +97,7 @@ export class NutritionalInformationComponent {
   editedRow: any;
   menuOpen = true;
   dialogContent: string = '';
+
   isMobile = isMobile;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -107,7 +108,6 @@ export class NutritionalInformationComponent {
       createMockInformation(k + 1)
     );
 
-    // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(data);
   }
 
@@ -143,12 +143,6 @@ export class NutritionalInformationComponent {
       this.dataSource.filteredData[idx] = { ...dialogContent };
       this.dataSource.data = this.dataSource.filteredData;
     });
-  }
-
-  saveChanges() {
-    console.log('Changes saved:', this.editedRow);
-    this.selectedRow = null;
-    this.editMode = false;
   }
 
   applyFilter(event: Event) {
