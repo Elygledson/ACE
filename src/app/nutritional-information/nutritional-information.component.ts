@@ -130,7 +130,7 @@ export class NutritionalInformationComponent {
     this.selectedRow = row;
     const dialogRef = this.dialog.open(EditDialogComponent, {
       data: { content: row },
-      height: '400px',
+      height: '500px',
       width: '600px',
     });
 
@@ -155,7 +155,6 @@ export class NutritionalInformationComponent {
   }
 }
 
-/** Builds and returns a new User. */
 function createMockInformation(id: number): NutritionalInformation {
   const name = NUTRIENTS[Math.round(Math.random() * (NUTRIENTS.length - 1))];
   return {

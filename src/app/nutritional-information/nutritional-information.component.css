@@ -46,12 +46,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   margin: 16px;
   padding: 16px;
   border-radius: 8px;
+  padding: 20px 0;
 }
 
 .container-large-box {
   height: 300px;
-  width: 300px;
+  width: 100%;
 }
