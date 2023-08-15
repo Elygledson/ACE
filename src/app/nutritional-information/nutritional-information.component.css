@@ -57,3 +57,14 @@
   height: 300px;
   width: 100%;
 }
+
+.table-title {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+tr.mat-mdc-footer-row td {
+  font-weight: bold;
+}

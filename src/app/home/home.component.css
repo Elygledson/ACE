@@ -9,3 +9,13 @@ mat-sidenav-container {
 mat-nav-list > a {
   text-decoration: none;
 }
+
+.nav-title {
+  display: flex;
+  align-items: center;
+}
+
+.active-link {
+  background-color: #e0e0e0; /* Cor de destaque para o link ativo */
+  color: #fff; /* Cor do texto para o link ativo */
+}

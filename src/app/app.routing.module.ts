@@ -13,10 +13,35 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: 'tilapia', component: NutritionalInformationComponent },
+      { path: 'farelo-camarao', component: NutritionalInformationComponent },
+
+      { path: 'farelo-abacaxi', component: NutritionalInformationComponent },
+
+      { path: 'farelo-coco', component: NutritionalInformationComponent },
+
+      {
+        path: 'farelo-trigo-amendoim',
+        component: NutritionalInformationComponent,
+      },
+      {
+        path: 'farelo-casca-mandioca',
+        component: NutritionalInformationComponent,
+      },
+      {
+        path: 'farelo-folha-mandioca',
+        component: NutritionalInformationComponent,
+      },
+      {
+        path: 'farinha-manga',
+        component: NutritionalInformationComponent,
+      },
+      {
+        path: 'varredura-mandioca',
+        component: NutritionalInformationComponent,
+      },
       {
         path: '',
-        redirectTo: 'tilapia',
+        redirectTo: 'farelo-camarao',
         pathMatch: 'full',
       },
     ],
