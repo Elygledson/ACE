@@ -4,7 +4,7 @@
   </button>
   <span class="nav-title">
     <img src="./assets/logo/logo.png" alt="logo-cooperativa" height="45" />
-    Cooperativa de Peixe
+    Laqua Nutri
   </span>
 </mat-toolbar>
 
@@ -15,8 +15,8 @@
       <a
         mat-list-item
         *ngFor="let link of links"
-        [href]="link.link"
         [class.active-link]="link.isActive"
+        [routerLink]="[link.link]"
         [matTooltip]="link.name.length > 15 ? link.name : ''"
         >{{ link.name }}</a
       >

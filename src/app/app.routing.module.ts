@@ -13,32 +13,7 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: 'farelo-camarao', component: NutritionalInformationComponent },
-
-      { path: 'farelo-abacaxi', component: NutritionalInformationComponent },
-
-      { path: 'farelo-coco', component: NutritionalInformationComponent },
-
-      {
-        path: 'farelo-trigo-amendoim',
-        component: NutritionalInformationComponent,
-      },
-      {
-        path: 'farelo-casca-mandioca',
-        component: NutritionalInformationComponent,
-      },
-      {
-        path: 'farelo-folha-mandioca',
-        component: NutritionalInformationComponent,
-      },
-      {
-        path: 'farinha-manga',
-        component: NutritionalInformationComponent,
-      },
-      {
-        path: 'varredura-mandioca',
-        component: NutritionalInformationComponent,
-      },
+      { path: ':link', component: NutritionalInformationComponent },
       {
         path: '',
         redirectTo: 'farelo-camarao',
@@ -51,6 +26,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [provideRouter(routes, withComponentInputBinding())],
+  providers: [],
 })
 export class AppRoutingModule {}

@@ -37,7 +37,7 @@
             <ng-container matColumnDef="Quantidade">
               <th mat-header-cell *matHeaderCellDef>Quantidade</th>
               <td mat-cell *matCellDef="let food">
-                {{ food.amount }}
+                {{ food.percentage }}
               </td>
               <td mat-footer-cell *matFooterCellDef>
                 {{ total }}
@@ -57,8 +57,19 @@
         <mat-icon matSuffix>search</mat-icon>
         <input matInput (keyup)="applyFilter($event)" #input />
       </mat-form-field> -->
-      <div class="table-container" *ngFor="let row of foods">
-        <div class="container-large-box mat-elevation-z4">
+      <div class="table-title">
+        <h2>Resultado de uma Ração</h2>
+        <h4><span style="font-weight: 500">Ração:</span> RAÇÃO TILÁPIA</h4>
+        <h4>
+          <span style="font-weight: 500">Exigência:</span> TILÁPIA DO NILO
+          CRESCIMENTO
+        </h4>
+      </div>
+      <div class="table-container-mobile">
+        <div
+          class="container-large-box mat-elevation-z4"
+          *ngFor="let row of foods"
+        >
           <mat-list>
             <mat-list-item>
               <span matListItemTitle>Alimento</span>
@@ -66,10 +77,11 @@
             </mat-list-item>
             <mat-list-item>
               <span matListItemTitle>Quantidade</span>
-              <span matListItemLine>{{ row.amount }}</span>
+              <span matListItemLine>{{ row.percentage }}</span>
             </mat-list-item>
           </mat-list>
         </div>
+        <h2>Total: {{ total }}</h2>
       </div>
     </ng-template>
   </mat-tab>
