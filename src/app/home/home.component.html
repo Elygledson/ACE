@@ -2,10 +2,7 @@
   <button mat-icon-button (click)="snav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="nav-title">
-    <img src="./assets/logo/logo.png" alt="logo-cooperativa" height="45" />
-    Laqua Nutri
-  </span>
+  <span class="nav-title"> {{ title }} </span>
 </mat-toolbar>
 
 <mat-sidenav-container color="primary">
@@ -17,7 +14,7 @@
         *ngFor="let link of links"
         [class.active-link]="link.isActive"
         [routerLink]="[link.link]"
-        [matTooltip]="link.name.length > 15 ? link.name : ''"
+        (click)="closeSidebar(link.name)"
         >{{ link.name }}</a
       >
     </mat-nav-list>

@@ -63,7 +63,8 @@
   width: 100%;
 }
 
-.table-title {
+.table-header,
+.table-footer {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   padding: 20px;

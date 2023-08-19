@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: ':link', component: NutritionalInformationComponent },
       {
         path: '',
-        redirectTo: 'farelo-camarao',
+        redirectTo: 'camarao-farelo',
         pathMatch: 'full',
       },
     ],

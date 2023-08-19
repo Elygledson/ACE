@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { isMobile } from '../shared/utils';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,13 @@ import { isMobile } from '../shared/utils';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  fishFeed = ['Tilápia'];
+  @ViewChild('snav') sidenav!: MatSidenav;
+  title = 'Farelo de Camarão';
   isMobile = isMobile;
   links = [
     {
       name: 'Farelo de Camarão',
-      link: 'farelo-camarao',
+      link: 'camarao-farelo',
       isActive: false,
     },
     {
@@ -51,4 +53,11 @@ export class HomeComponent {
       isActive: false,
     },
   ];
+
+  closeSidebar(name: string): void {
+    if (this.sidenav) {
+      this.title = name;
+      this.sidenav.close();
+    }
+  }
 }

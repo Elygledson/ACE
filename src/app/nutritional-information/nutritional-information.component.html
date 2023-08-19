@@ -8,7 +8,7 @@
     </ng-template>
     <div *ngIf="!isMobile(); else mobile" class="table-container">
       <div class="table-content">
-        <div class="table-title">
+        <div class="table-header">
           <h2>Resultado de uma Ração</h2>
           <h4><span style="font-weight: 500">Ração:</span> RAÇÃO TILÁPIA</h4>
           <h4>
@@ -57,7 +57,7 @@
         <mat-icon matSuffix>search</mat-icon>
         <input matInput (keyup)="applyFilter($event)" #input />
       </mat-form-field> -->
-      <div class="table-title">
+      <div class="table-header">
         <h2>Resultado de uma Ração</h2>
         <h4><span style="font-weight: 500">Ração:</span> RAÇÃO TILÁPIA</h4>
         <h4>
@@ -81,7 +81,9 @@
             </mat-list-item>
           </mat-list>
         </div>
-        <h2>Total: {{ total }}</h2>
+        <div class="table-footer">
+          <h2>Total: {{ total }}</h2>
+        </div>
       </div>
     </ng-template>
   </mat-tab>
