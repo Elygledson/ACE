@@ -8,6 +8,11 @@ export interface FoodNutritionalInfo {
   item: string;
   percentage: number;
 }
+
+export interface Info {
+  nutritionalInfo: FoodNutritionalInfo[];
+  content: string;
+}
 @Component({
   selector: 'app-nutritional-information',
   templateUrl: './nutritional-information.component.html',
@@ -30,7 +35,9 @@ export class NutritionalInformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.foods = this.nutritionalService.getNutritionalInfo(params['link']);
+      const foods = this.nutritionalService.getNutritionalInfo(params['link']);
+      this.foods = foods.nutritionalInfo;
+      this.dialogContent = foods.content;
     });
   }
 
