@@ -1,0 +1,31 @@
+<h2 mat-dialog-title style="text-align: center">Ajuda</h2>
+<mat-dialog-content class="mat-typography">
+  <p>
+    1. Ao clicar neste botão <mat-icon>menu</mat-icon> deve ser mostrado o menu
+    do aplicativo onde estão listados todas as rações disponíveis:
+  </p>
+  <div style="display: flex; justify-content: center">
+    <img
+      src="../../assets/tutorial/sidebar.png"
+      alt="barra lateral"
+      width="200"
+    />
+  </div>
+  <p>
+    2. Selecionando um dos itens acima, o botão
+    <mat-icon>set_meal</mat-icon> exibe uma tabela com as informações dos
+    nutrientes que compõem cada ração.
+  </p>
+  <div style="display: flex; justify-content: center">
+    <img src="../../assets/tutorial/table.png" alt="tabela" width="200" />
+  </div>
+
+  <p>
+    3. Por fim, o botão <mat-icon>receipt_long</mat-icon> mostra uma descrição
+    completa da ração.
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

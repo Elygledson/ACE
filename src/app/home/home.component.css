@@ -19,3 +19,8 @@ mat-nav-list > a {
   background-color: #e0e0e0; /* Cor de destaque para o link ativo */
   color: #fff; /* Cor do texto para o link ativo */
 }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}

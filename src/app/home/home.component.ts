@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { isMobile } from '../shared/utils';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatDialog } from '@angular/material/dialog';
+import { TutorialDialogComponent } from '../tutorial-dialog/tutorial-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -53,6 +55,15 @@ export class HomeComponent {
       isActive: false,
     },
   ];
+
+  constructor(public dialog: MatDialog) {}
+
+  openTutorialDialog(): void {
+    const dialogRef = this.dialog.open(TutorialDialogComponent, {
+      width: '90%', // Ajuste o tamanho do diálogo conforme necessário
+      maxWidth: '600px', // Tamanho máximo do diálogo
+    });
+  }
 
   closeSidebar(name: string): void {
     if (this.sidenav) {

@@ -1,8 +1,23 @@
-<mat-toolbar color="primary" class="toolbar">
-  <button mat-icon-button (click)="snav.toggle()">
+<mat-toolbar
+  color="primary"
+  class="toolbar"
+  [ngClass]="{ toolbar: isMobile() }"
+>
+  <button
+    matTooltip="Clique para alternar entre as rações"
+    mat-icon-button
+    (click)="snav.toggle()"
+  >
     <mat-icon>menu</mat-icon>
   </button>
   <span class="nav-title"> {{ title }} </span>
+  <button
+    mat-icon-button
+    aria-label="Example icon button with a vertical three dot icon"
+    (click)="openTutorialDialog()"
+  >
+    <mat-icon>help</mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-sidenav-container color="primary">
