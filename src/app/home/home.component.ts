@@ -35,12 +35,12 @@ export class HomeComponent {
       isActive: false,
     },
     {
-      name: 'Farinha de Casca de Mandioca',
+      name: 'Farinha de C. Mandioca',
       link: 'farinha-casca-mandioca',
       isActive: false,
     },
     {
-      name: 'Farinha de Folha de Mandioca',
+      name: 'Farinha de F. Mandioca',
       link: 'farinha-folha-mandioca',
       isActive: false,
     },
@@ -50,7 +50,7 @@ export class HomeComponent {
       isActive: false,
     },
     {
-      name: 'Farelo de Varredura de Mandioca',
+      name: 'Farelo de V. Mandioca',
       link: 'varredura-mandioca',
       isActive: false,
     },

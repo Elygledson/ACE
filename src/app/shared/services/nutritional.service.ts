@@ -28,7 +28,7 @@ export class NutritionalService {
         { item: 'PREMIX-APP', percentage: 1 },
         { item: 'CALCÁRIO', percentage: 0.2509 },
       ],
-      content: `<h1>Resíduos da manga e do Abacaxi</h1>
+      content: `<h2>Resíduos da manga e do Abacaxi</h2>
                 As frutas são produzidas principalmente para atender ao consumo humano. No entanto,
                 muitos resíduos (subprodutos) são produzidos durante o processamento desse produto. Esses
                 resíduos, em sua maioria, não são aproveitados pela indústria, que os descarta no meio ambiente
@@ -50,7 +50,13 @@ export class NutritionalService {
         { item: 'PREMIX-APP', percentage: 1 },
         { item: 'CALCÁRIO', percentage: 0.1029 },
       ],
-      content: '',
+      content: `<h2>Composição Nutricional da Farinha de Coco</h2><p>O farelo de coco é um subproduto, resultante do processamento industrial do coco, após a retirada da água e da polpa para alimentação humana. Neste ingrediente a quantidade de óleo pode variar de acordo com o método de extração. O farelo apresenta um teor de 20 a 25% de proteína bruta de razoável qualidade e 10 a 12% de fibra sendo que esta interfere na adequada utilização da proteína. Altas temperaturas durante a estocagem aceleram a rancificação e, em regiões de grande umidade, a armagenagem em condições inadequadas pode favorecer a contaminação microbiana.</p>
+      <img src="../../../assets/tutorial/F.coco.jpg" alt="imagem do coco"/>
+      <p>Desta forma, o farelo de coco vem sendo incorporado à alimentação animal, sobretudo por sua disponibilidade na região Nordeste. MIRANDA et al. (2005), afirmaram que o farelo de coco pode substituir totalmente o farelo de soja em dietas nutricionalmente balanceadas para tambaqui sem comprometer o seu desempenho e que níveis crescentes da inclusão desse ingrediente na ração proporcionou melhores índices de viabilidade econômica. Já LEMOS et al. (2011) indica a substituição de até 25% do farelo de soja por farelo de coco, para o tambaqui, permitindo assim a elaboração de dietas mais viáveis economicamente.
+      O valor nutritivo do farelo de coco na alimentação de carpa capim foi estudado por SILVA & WEERAKOON (1981), que substituíram 33% do zooplâncton da ração dessas larvas por esse subproduto. Segundo esses autores, tal nível de inclusão modificou a taxa de ingestão e, embora tenha proporcionado conversão alimentar de 1,29 resultou em diminuião da taxa de crescimento dos alevinos.</p>
+      <img src="../../../assets/tutorial/tambaqui.jpg" alt="imagem de peixe"/>
+      <p>OLIVEIRA et al. (1997) avaliaram a digestibilidade do farelo de coco para pacu e encontraram valores de 72,63; 83,35; 38,77 e 87,42% respectivamente para as frações matéria seca, proteína bruta, extrato etéreo, fibra bruta e matéria mineral. Concluiram que o farelo de coco, em função do seu coeficiente de digestibilidade, apresenta-se como produto sucedâneo (pode ser substituto) para confecção de dietas para peixes tropicais.SANTOS et al. (2009) trabalhando com alevinos para tilápia do Nilo, avaliaram a inclusão de diferentes níveis de farelo de coco em rações e seus efeitos sobre o desempenho produtivo e viabilidade econômica e recomendaram a inclusão de 15% de farelo de coco em dietas completas. Já PEZZATO et al. (2000) avaliaram o potencial de utilização do farelo de coco em rações para tilápia do Nilo e constataram que o farelo de coco pode ser empregado em níveis de 30% da ração para a tilápia do Nilo sem afetar nos parâmetros produtivos.</p>
+      `,
     },
     'farelo-trigo-amendoim': {
       nutritionalInfo: [
@@ -77,7 +83,9 @@ export class NutritionalService {
         { item: 'PREMIX-APP', percentage: 1 },
         { item: 'CALCÁRIO', percentage: 0.1838 },
       ],
-      content: '',
+      content: `<h2>Composição Nutricional da Farinha da Casca de Mandioca</h2><p>A mandioca é uma planta nativa do Brasil, cultivada em praticamente em todo o seu território. Tem um alto potencial para alimentação animal, é uma fonte rica em energia e pode produzir diferentes resíduos, como a farinha da sua casca. É importante fazer uso dos subprodutos, não só da mandioca mas de todos os subprodutos em geral, porque se estes não forem recolhidos de forma adequada podem contaminar significativamente o meio ambiente.</p>
+        <img src="../../../assets/tutorial/mandioca.jpg" alt="mandioca"/>
+        <p>PEZZATO et al. (2004), estudaram a digestibilidade da raspa de mandioca e observaram resultados de aproximadamente 59,66 + ou - 2;38%; 93 + ou - 2,91%; 2.503 + ou - 21 kcal/kg, para matéria seca, proteína bruta e energia digestível, respectivamente.</p>`,
     },
     'farinha-folha-mandioca': {
       nutritionalInfo: [
@@ -89,7 +97,11 @@ export class NutritionalService {
         { item: 'PREMIX-APP', percentage: 1 },
         { item: 'CALCÁRIO', percentage: 0.1039 },
       ],
-      content: '',
+      content: `<h2>Composição Nutricional da Farinha da Folha de Mandioca</h2><p>A folha da mandioca apresenta um alto valor nutritivo, rica em proteínas, vitaminas e minerais. Além de possuir baixo custo de produção por serem consideradas resíduos de uma cultura de subsistência amplamente adaptada às nossas condições e, principalmente, por não competirem com o principal produto comercial da cultura, as raízes. 
+      Entretanto, Sua utilização como alimento alternativo é limitado devido a grande variação do conteúdo nutricional das folhas das diferentes cultivares de mandioca. Isto ocorre porque existe um alto número de cultivares, adaptadas as mais diferentes regiões do país, as quais sofrem a influência de vários fatores como: variedades, áua, clima e solo, que podem acarretar enormes diferenças na composição química de cada uma dessas cultivares.</p>
+      <img src="../../../assets/tutorial/folha de mandioca.jpg" alt="mandioca"/>
+      <p>O conteúdo protéico da folha da mandioca varia entre 20 a 30%, apresentando boa qualidade, isto é um bom perfil de aminoácidos essenciais, como a lisina. Essas folhas também apresentam razoável taxas de minerais. Segundo NORMANHA (1966), as variações encontradas por 100g de folhas frescas são: cálcio- 100 a 210mg; ferro- 2 a 3,5mg; vitamina A- 9.000 a 13. U.I; tiamina (B1)- 0,15 a 0,30mg; riboflavina (B2)- 0,25 a 0,43mg; niacina- 0,45 a 3,53mg e vitamina C- 100 a 320mg.
+      O valor nutritivo da folha de mandioca como fonte protéica em dietas para a tilápia do Nilo, foi estudado por NG & WEE (1989). Os coeficientes de digestibilidade aparentes para a proteínabruta foi de 18,2% quando do emprego de folhas úmidas e quando secas de 64%. Segundo ainda estes autores, houve uma variação nos coeficientes de digestibilidade da proteína de 35 a 67%.</p>`,
     },
     'farinha-manga': {
       nutritionalInfo: [
@@ -101,7 +113,7 @@ export class NutritionalService {
         { item: 'PREMIX-APP', percentage: 1 },
         { item: 'CALCÁRIO', percentage: 0.1456 },
       ],
-      content: `<h1>Resíduos da manga e do Abacaxi</h1>
+      content: `<h2>Resíduos da manga e do Abacaxi</h2>
                 As frutas são produzidas principalmente para atender ao consumo humano. No entanto,
                 muitos resíduos (subprodutos) são produzidos durante o processamento desse produto. Esses
                 resíduos, em sua maioria, não são aproveitados pela indústria, que os descarta no meio ambiente
@@ -125,7 +137,9 @@ export class NutritionalService {
         { item: 'PREMIX-APP', percentage: 1 },
         { item: 'CALCÁRIO', percentage: 0.2546 },
       ],
-      content: '',
+      content: `<h2>Composição Nutricional da Farinha de Varredura de Mandioca</h2><p>A mandioca é uma planta nativa do Brasil, cultivada em praticamente em todo o seu território. Tem um alto potencial para alimentação animal, é uma fonte rica em energia e pode produzir diferentes resíduos, como a farinha da varredura. É importante fazer uso dos subprodutos, não só da mandioca mas de todos os subprodutos em geral, porque se estes não forem recolhidos de forma adequada podem contaminar significativamente o meio ambiente. A farinha de varredura é a farinha de mandioca destinada ao consumo humano que por algum motivo cai no chão da fábrica, sendo portanto um subproduto do processamento da mandioca pelas indústrias farinheiras e apresenta boa disponibilidade a baixo custo.</p>
+      <img src="../../../assets/tutorial/varredura.jpg" alt="varredura"/>
+      <p>LACERDA et al. (2005) avaliaram a farinha de varredura de mandioca na alimentação de carpa capim e concluiram que o farelo de varredura de mandioca pode substituir o milho em até 100% nas rações para alevinos. Testando este mesmo ingrediente para alevinos de tilápia do Nilo, BOSCOLO et al. (2002a) concluiram que a farinha de varredura de mandioca pode ser utilizada na alimentação de alevinos de tilápia do Nilo até o nível de 24% de inclusão, substituindo toda a energia do milho, sem causar prejuízos no desempenho dos animais.</p>`,
     },
   };
 
