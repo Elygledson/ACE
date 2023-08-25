@@ -16,7 +16,13 @@ export class NutritionalService {
         { item: 'PREMIX-APP', percentage: 1 },
         { item: 'CALCÁRIO', percentage: 0.4054 },
       ],
-      content: '',
+      content: `<h2>A Farinha de Resíduo de Camarão na Alimentação Animal</h2>
+              <p>A farinha de resíduo de camarão é um produto seco, obtido a partir do resíduo restante do beneficiamento do camarão, podendo conter pedaços ou até mesmo, camarões internos.Por ser proveniente de um resíduo sua composição é bastante variável devido a alguns fatores, tais como: diferença entre as espécies de camarão, e fonte e/ou método de processamento, por exemplo.</p>
+              <p>Os trabalhos com a farinha de camarão para alimentação animal são escassos quando comparados com outros temas da literatura. De acordo com Freitas et al, (1976) os resíduos constituem cerca de 40% do peso total de camarão, eles são gerados no processamento do camarão para a produção do filé, sendo composto por cefalotórax, segmentos abdominais, cauda e pequenos camarões que não se enquadram no padrão do comércio. Valdares Filho et al. (2002) avaliou a composição química desse resíduo: 61,22% matéria orgânica, 30.36% de proteína bruta, 38,78% de matéria mineral, 57, 52% de digestibilidade da matéria seca e 71,82% de digestibilidade da matéria orgânica.
+              De acordo com Backes et al. (2007) esse material cozido e seco em estufa apresenta 93,60% de matéria seca, 37,56% de proteína bruta,2,87%de extrato de etéreo, e 41,01% de matéria mineral. Khempaka et al. (2011), encontraram valores de 36,69% para proteína bruta, 10,28% de extrato etéreo, 19,49% de fibra bruta (a fibra bruta aparece sob forma de quitina), 4.92% de cálcio e fósforo total de 1,20%. Demonstrando que a farinha de resíduo possui rica composição química.
+              Também tem se estudado o aproveitamento do resíduo de camarão como fonte protéica no balanceamento de dietas. Empregando a FRC em pesquisas com relação à nutrição animal, Pereira-da-Silva et al. (2000), avaliaram respostas da Tilápia do Nilo (Oreochromis niloticus) à atratividade e palatabilidade da farinha de camarão e afirmaram que este resíduo possui alta atrato-palatabilidade para os 
+              peixes sendo indicada sua utilização neste tipo de produção animal, pois melhora o consumo de ração. Em uma criação animal mais exótica, Rodrigues et al. (2004), observaram que a farinha da cabeça de camarão com energia metabolizável verdadeira de 3247 kcal/kg pode perfeitamente utilizada na alimentação de rã-touro
+              </p>`,
     },
     'farelo-abacaxi': {
       nutritionalInfo: [
@@ -70,7 +76,13 @@ export class NutritionalService {
         { item: 'SOJA FARELO', percentage: 0 },
         { item: 'ÓLEO DE SOJA', percentage: 0 },
       ],
-      content: '',
+      content: `<h2> Composição Nutricional da Farinha de Trigo</h2>
+                <p>O farelo de trigo é o principal e mais abundante subproduto da moenda de grãos, sendo principalmente utilizado em rações animais, consiste em um recurso alimentar renovável e pouco explorado. Contêm entre 15 e 17% de PB: 4,5% de gordura e 10% de FB.
+                Ressalta-se que a proteína do farelo de trigo é deficiente nos aminoácidos: lisina, metionina e fenilanina, sendo muitas vezes necessário a suplementação por aminoácidos sintéticos nas rações.
+                No entanto, ROSTAGNO et al. (2005) cita que a adição de farelo de trigo na dieta de animais monogástricos é limitada principalmente pela alta concentração de fibra. Os principais polissacarídeos não-amídicos(PNA) presentes nestes subproduto são as arabinoxilanas (36,5%), mas contém também celulose (11%), lignina (3 a 10%) e ácidos urônicos (3 a 6%).
+                A digestibilidade dos nutrientes do farelo de trigo para tilápia do Nilo foi avaliado por PEZZATO et al.(2002), quando encontraram coeficientes de digestibilidade de: 59.29, 94.86
+                e 91.29% para MS, PB e EB respectivamente. 
+                Segundo KUBITZA (2011), embora o farelo de trigo favoreça a boa expansão dos peletes extrusados, o seu elevado teor de fibra bruta limita o seu uso em rações para peixes em níveis de até 25%.</p>`,
     },
     'farinha-casca-mandioca': {
       nutritionalInfo: [
